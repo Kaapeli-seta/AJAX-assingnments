@@ -11,6 +11,8 @@
   "description": "",
   "devDependencies": {
     "eslint": "^9.9.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1"
   }
 }

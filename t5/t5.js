@@ -32,10 +32,17 @@ for (const restaurant of restaurants) {
   const rivi = document.createElement('tr');
   rivi.append(nimi, osoite);
 
-  rivi.addEventListener('click', function () {
+  rivi.addEventListener('click', async function () {
+    const cour = await fetchData(apiURL + `/api/v1/restaurants/daily/${restaurant._id}/fi`)
+    let listaHTML = '';
+    for (const food of cour.courses) {
+      listaHTML += `<il>
+      <h3>${food.name},</h3>
+      <p>${food.price},</p>
+      <p>${food.diets}</p>
+      </il>`
+    }
 
-
-const listaHTML = '<il>ruokalista, hinta, allergeenit</il>'
 
     const korostetut = document.querySelectorAll('.highlight');
     for (const korostettu of korostetut) {
